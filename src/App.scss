@@ -1,0 +1,220 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: rgb(236, 231, 223);
+  padding: 5%;
+  height: 100vh;
+
+  .msgcontainer {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .header {
+    display: flex;
+    align-items: center;
+  }
+}
+.hidden {
+  display: none;
+}
+
+.toDo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60vh 5rem;
+  gap: 20px;
+
+  .edit {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+
+    font-size: 1.3rem;
+    background: rgb(225, 194, 172);
+    box-shadow: #cbbaba 10px 9px 11px 1px;
+    padding: 10px 17px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: none;
+    &:hover {
+      background-color: rgb(248, 136, 55);
+    }
+  }
+
+  .editToDo {
+    margin: 0 24px;
+    background: #f7dfdf;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 10px 0 10px;
+
+    a,
+    button {
+      background: transparent;
+      border: none;
+      padding: 0 5px;
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .toDo-card {
+    background-color: #f9f9f9;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: #cbbaba 10px 9px 11px 1px;
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    .task {
+      font-weight: bold;
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      p {
+        font-weight: bold;
+      }
+    }
+    .date {
+      font-size: 0.8rem;
+    }
+    form {
+      position: relative;
+      display: grid;
+      place-items: center;
+
+      margin: 10px;
+      label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 5rem;
+        margin: 10px;
+        font-size: 1.3rem;
+        box-shadow: inset #cbbaba 0px 0px 12px;
+        padding: 10px 17px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        input,
+        select {
+          background-color: transparent;
+          border: none;
+          margin: auto 0;
+          text-transform: uppercase;
+          color: rgb(45, 45, 45);
+        }
+      }
+      button {
+        width: 100%;
+        height: 5rem;
+        margin: 10px;
+        font-size: 1.3rem;
+        background: rgb(200, 113, 51);
+        box-shadow: #cbbaba 10px 9px 11px 1px;
+        padding: 10px 17px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        border: none;
+        &:hover {
+          background-color: rgb(248, 136, 55);
+        }
+      }
+    }
+  }
+}
+
+.status {
+  background-color: #f9f9f9;
+  color: black;
+  padding: 10px;
+  grid-row: 1/-1;
+  border-radius: 5px;
+  box-shadow: #cbbaba 10px 9px 11px 1px;
+}
+.allTodos {
+  overflow: auto;
+  margin-top: 20px;
+  height: 90%;
+}
+
+.done .cool__link .task {
+  background: #80a175;
+}
+.cool__link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin: 0 10px 20px 10px;
+  & .task {
+    width: 100%;
+    height: 5rem;
+    background: #ddaeae;
+    padding: 10px 17px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    .todo-content {
+      p:first-of-type {
+        font-weight: bold;
+      }
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 5px;
+    }
+    .date {
+      color: #474747;
+    }
+  }
+  & button {
+    position: absolute;
+    top: 0;
+    border: none;
+    width: 100%;
+    height: 5rem;
+
+    background-color: #80a175af;
+    border-radius: 5px;
+    transform: translate3d(450%, 0, 0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover button {
+    transform: translate3d(0, 0, 0);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 850px) {
+  .main {
+    padding: 2% 3.4rem;
+  }
+  .toDo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    height: auto;
+    padding: 8% 3.4rem;
+  }
+  .toDo {
+    display: unset;
+  }
+
+  .status {
+    margin-bottom: 20px;
+  }
+}

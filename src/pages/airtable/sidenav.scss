@@ -1,0 +1,88 @@
+.sidebar-icon {
+  display: none;
+}
+.closebtn {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .sidebar-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 150px;
+    width: 3rem;
+    height: 3rem;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    /* width: 100%; */
+    font-size: 1.3rem;
+    background: rgb(225, 194, 172);
+
+    padding: 10px 17px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: none;
+  }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+    .toDo-card {
+      margin: 0 10%;
+      width: auto;
+    }
+  }
+  .hideSide {
+    width: 100%;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .toDo .edit {
+    grid-row: unset;
+    position: absolute;
+    left: 0;
+    top: 200px;
+    height: 3rem;
+    width: 3rem;
+    box-shadow: none;
+    padding: 0;
+
+    span {
+      display: none;
+    }
+  }
+}
